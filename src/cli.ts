@@ -2,6 +2,7 @@
 import { parseArgs } from "node:util";
 import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js";
 import { DEFAULT_ENDPOINT, SITE_URL, VERSION } from "./constants.js";
+import { runCheck } from "./check.js";
 import { createHttpApp } from "./http.js";
 import { RemoteDirectory, parseEndpoint } from "./remote.js";
 import { createServer } from "./server.js";
@@ -12,8 +13,10 @@ MCP server for the SaaS Puppy free-tier directory (${SITE_URL}).
 Usage:
   saas-puppy-mcp                   Run over stdio (default, for Claude Desktop, Cursor, VS Code, ...)
   saas-puppy-mcp --http            Run a stateless Streamable HTTP server on /mcp
+  saas-puppy-mcp --check           Test the connection and explain the result in plain English
 
 Options:
+  --check                Run a self-test and exit (0 = everything works)
   --http                 Serve Streamable HTTP instead of stdio
   --port <n>             HTTP port (default: $PORT or 8080)
   --host <addr>          HTTP bind address (default: 0.0.0.0)
@@ -26,6 +29,7 @@ Options:
 async function main(): Promise<void> {
   const { values } = parseArgs({
     options: {
+      check: { type: "boolean", default: false },
       http: { type: "boolean", default: false },
       port: { type: "string" },
       host: { type: "string" },
@@ -43,6 +47,10 @@ async function main(): Promise<void> {
   parseEndpoint(endpoint);
   const timeoutMs = Number(values.timeout ?? process.env["SAAS_PUPPY_MCP_TIMEOUT_MS"] ?? 20_000);
   if (!Number.isFinite(timeoutMs) || timeoutMs <= 0) throw new Error("--timeout must be a positive number.");
+
+  if (values.check) {
+    process.exit(await runCheck(endpoint, timeoutMs, (line) => process.stdout.write(`${line}\n`)));
+  }
 
   const remote = new RemoteDirectory(endpoint, { timeoutMs });
   const shutdown = async () => {

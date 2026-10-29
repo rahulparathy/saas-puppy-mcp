@@ -82,6 +82,18 @@ export class RemoteDirectory {
     return { isError: true, content: [{ type: "text", text: UNAVAILABLE_MESSAGE }] };
   }
 
+  /** Names of the tools the hosted endpoint offers. Throws if it cannot be reached. */
+  async listToolNames(): Promise<string[]> {
+    try {
+      const client = await this.connect();
+      const { tools } = await client.listTools(undefined, { timeout: this.timeoutMs });
+      return tools.map((tool) => tool.name);
+    } catch (error) {
+      await this.reset();
+      throw error;
+    }
+  }
+
   async close(): Promise<void> {
     await this.reset();
   }

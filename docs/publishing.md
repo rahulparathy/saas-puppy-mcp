@@ -1,6 +1,6 @@
 # Publishing and listing
 
-This repository is private until the SaaS Puppy directory launches. Do these steps in order when you go public.
+This repository is private until the SaaS Puppy directory launches. Do these steps in order when you go public. A click-by-click version for non-developers is in [launch-guide.md](launch-guide.md).
 
 ## 0. Before the first release
 
