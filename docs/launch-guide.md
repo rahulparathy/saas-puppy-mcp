@@ -20,6 +20,8 @@ On https://github.com/rahulparathy/saas-puppy-mcp:
 4. **Topics:** `mcp`, `model-context-protocol`, `mcp-server`, `saas`, `free-tier`, `developer-tools`, `typescript`
 5. Click **Save changes**.
 6. Go to **Settings**, then **General**, scroll to **Social preview**, click **Edit**, then **Upload an image** and choose `assets/social-preview.png` from this repository. This is the picture shown when someone shares the link.
+7. Protect the `main` branch. Go to **Settings**, then **Rules**, then **Rulesets**, then **New ruleset**, then **New branch ruleset**. Name it `Protect main`, set **Enforcement status** to **Active**, click **Add target**, then **Include default branch**. Leave **Restrict deletions** and **Block force pushes** ticked. Do not tick **Require a pull request before merging**, because it stops you from saving changes straight to `main`. Click **Create**.
+8. Before the npm release, replace the banner link in `README.md` with the full address `https://raw.githubusercontent.com/rahulparathy/saas-puppy-mcp/main/assets/banner.png`. The npm page cannot see files inside the repository, so a short path shows a broken image there. This only works once the repository is public.
 
 ## Step 2: Remove the pre-release note (2 minutes)
 
@@ -59,7 +61,7 @@ Submit on: [Smithery](https://smithery.ai), [Glama](https://glama.ai), [mcp.so](
 ## Step 6: Tell people
 
 - Add the MCP address to the SaaS Puppy site, for example on a "Use SaaS Puppy in your AI app" page.
-- Post it. The banner is `assets/banner.svg` (use `assets/social-preview.png` where an image file is needed).
+- Post it. The banner is `assets/banner.png` (use `assets/social-preview.png` where an image file is needed).
 
 ## Later: releasing an update
 

@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.svg" alt="SaaS Puppy MCP: ask your AI about free-tier developer tools" width="100%">
+  <img src="assets/banner.png" alt="SaaS Puppy MCP: ask your AI about free-tier developer tools" width="100%">
 </p>
 
 <p align="center">
