@@ -1,0 +1,15 @@
+runtime: container
+build:
+  dockerfile: Dockerfile
+  dockerBuildPath: .
+startCommand:
+  type: http
+  configSchema:
+    type: object
+    properties:
+      endpoint:
+        type: string
+        description: Upstream public SaaS Puppy MCP address. Leave empty to use https://saaspuppy.com/MCP.
+        default: https://saaspuppy.com/MCP
+  exampleConfig:
+    endpoint: https://saaspuppy.com/MCP
