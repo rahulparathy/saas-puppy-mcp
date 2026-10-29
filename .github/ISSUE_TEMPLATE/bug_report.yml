@@ -1,0 +1,31 @@
+name: Something is not working
+description: The server will not connect, or answers look wrong.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting this. You do not need to be technical. Fill in what you can.
+  - type: textarea
+    id: what
+    attributes:
+      label: What happened?
+      description: What did you ask or do, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: check
+    attributes:
+      label: Output of the self-test
+      description: Run `npx -y saas-puppy-mcp --check` and paste everything it prints.
+      render: text
+  - type: input
+    id: app
+    attributes:
+      label: Which app are you using?
+      placeholder: Claude, ChatGPT, Cursor, VS Code, Claude Code, other
+  - type: input
+    id: version
+    attributes:
+      label: Package version
+      description: Run `npx -y saas-puppy-mcp --version`, or write "hosted address" if you connect with the web address.

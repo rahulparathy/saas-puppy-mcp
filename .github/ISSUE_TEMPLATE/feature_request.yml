@@ -1,0 +1,15 @@
+name: Suggest an improvement
+description: Something you wish this server could do.
+labels: [enhancement]
+body:
+  - type: textarea
+    id: idea
+    attributes:
+      label: What would you like it to do?
+      description: Describe the question you want to ask your AI and what answer you would want back.
+    validations:
+      required: true
+  - type: markdown
+    attributes:
+      value: |
+        Note: this server is read-only and does not offer bulk export or paging through the whole directory. Requests for those will be declined.

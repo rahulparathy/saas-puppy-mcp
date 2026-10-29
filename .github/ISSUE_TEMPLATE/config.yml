@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: SaaS Puppy website
+    url: https://saaspuppy.com
+    about: For wrong or outdated tool listings, use the site. This repository only covers the MCP server.

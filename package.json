@@ -43,7 +43,8 @@
     "test": "vitest run",
     "start": "node dist/cli.js",
     "start:http": "node dist/cli.js --http",
-    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+    "prepublishOnly": "npm run typecheck && npm test && npm run build",
+    "check": "npm run typecheck && npm run build && npm test"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",
