@@ -1,0 +1,28 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.rahulparathy/saas-puppy",
+  "title": "SaaS Puppy",
+  "description": "Look up or compare free-tier developer tools in the SaaS Puppy directory, with the catch spelled out.",
+  "websiteUrl": "https://saaspuppy.com",
+  "repository": {
+    "url": "https://github.com/rahulparathy/saas-puppy-mcp",
+    "source": "github"
+  },
+  "version": "0.1.0",
+  "packages": [
+    {
+      "registryType": "npm",
+      "identifier": "saas-puppy-mcp",
+      "version": "0.1.0",
+      "transport": {
+        "type": "stdio"
+      }
+    }
+  ],
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://saaspuppy.com/MCP"
+    }
+  ]
+}

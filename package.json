@@ -1,0 +1,57 @@
+{
+  "name": "saas-puppy-mcp",
+  "version": "0.1.0",
+  "mcpName": "io.github.rahulparathy/saas-puppy",
+  "description": "MCP server for SaaS Puppy, a directory of free-tier developer tools. Look up one tool or compare two or three, with the catch spelled out.",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "saas",
+    "free-tier",
+    "developer-tools",
+    "directory",
+    "pricing"
+  ],
+  "homepage": "https://saaspuppy.com",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahulparathy/saas-puppy-mcp.git"
+  },
+  "bugs": {
+    "url": "https://github.com/rahulparathy/saas-puppy-mcp/issues"
+  },
+  "license": "MIT",
+  "author": "Rahul Parathy",
+  "type": "module",
+  "main": "dist/server.js",
+  "types": "dist/server.d.ts",
+  "bin": {
+    "saas-puppy-mcp": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "server.json",
+    "README.md",
+    "LICENSE"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.build.json && node scripts/postbuild.mjs",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run",
+    "start": "node dist/cli.js",
+    "start:http": "node dist/cli.js --http",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "typescript": "^5.9.0",
+    "vitest": "^5.0.5"
+  }
+}
