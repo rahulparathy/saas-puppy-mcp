@@ -7,7 +7,7 @@ Technical details are in [publishing.md](publishing.md). If a website has change
 ## Before you start
 
 - [ ] The directory is live at https://saaspuppy.com.
-- [ ] The MCP address works. In a terminal, run `npx -y saas-puppy-mcp --check --endpoint https://saaspuppy.com/MCP`. It should end with `All good.` (If you have not published to npm yet, skip this and ask Claude to run the check for you.)
+- [ ] The MCP address works. On GitHub, open the **Actions** tab, click **Check live endpoint** on the left, click **Run workflow**, then **Run workflow** again. After about two minutes the run shows a green tick if the live address works. Open it and look for `All good.` in the last step. A red cross means the site's MCP address is not answering yet.
 - [ ] You have accounts on [GitHub](https://github.com) (done) and [npm](https://www.npmjs.com/signup) (free).
 
 ## Step 1: Fill in the repository's front page (5 minutes)

@@ -1,0 +1,29 @@
+name: Check live endpoint
+
+# Run this by hand from the Actions tab (pick "Check live endpoint", click "Run workflow").
+# It builds the package from this repository and runs the self-test against the hosted
+# SaaS Puppy MCP, so you can confirm the live site works without using a terminal.
+on:
+  workflow_dispatch:
+    inputs:
+      endpoint:
+        description: Address of the hosted MCP
+        required: false
+        default: https://saaspuppy.com/MCP
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Run the self-test
+        run: node dist/cli.js --check --endpoint "${{ inputs.endpoint }}"
