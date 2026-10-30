@@ -19,9 +19,8 @@ On https://github.com/rahulparathy/saas-puppy-mcp:
 3. **Website:** `https://saaspuppy.com`
 4. **Topics:** `mcp`, `model-context-protocol`, `mcp-server`, `saas`, `free-tier`, `developer-tools`, `typescript`
 5. Click **Save changes**.
-6. Go to **Settings**, then **General**, scroll to **Social preview**, click **Edit**, then **Upload an image** and choose `assets/social-preview.png` from this repository. This is the picture shown when someone shares the link.
-7. Protect the `main` branch. Go to **Settings**, then **Rules**, then **Rulesets**, then **New ruleset**, then **New branch ruleset**. Name it `Protect main`, set **Enforcement status** to **Active**, click **Add target**, then **Include default branch**. Leave **Restrict deletions** and **Block force pushes** ticked. Do not tick **Require a pull request before merging**, because it stops you from saving changes straight to `main`. Click **Create**.
-8. Before the npm release, replace the banner link in `README.md` with the full address `https://raw.githubusercontent.com/rahulparathy/saas-puppy-mcp/main/assets/banner.png`. The npm page cannot see files inside the repository, so a short path shows a broken image there. This only works once the repository is public.
+6. Protect the `main` branch. Go to **Settings**, then **Rules**, then **Rulesets**, then **New ruleset**, then **New branch ruleset**. Name it `Protect main`, set **Enforcement status** to **Active**, click **Add target**, then **Include default branch**. Leave **Restrict deletions** and **Block force pushes** ticked. Do not tick **Require a pull request before merging**, because it stops you from saving changes straight to `main`. Click **Create**.
+7. Before the npm release, replace the banner link in `README.md` with the full address `https://raw.githubusercontent.com/rahulparathy/saas-puppy-mcp/main/assets/banner.png`. The npm page cannot see files inside the repository, so a short path shows a broken image there. This only works once the repository is public.
 
 ## Step 2: Remove the pre-release note (2 minutes)
 
@@ -33,6 +32,8 @@ Open `README.md` on GitHub, click the pencil icon, delete the block that starts 
 2. Click **Change visibility**, choose **Make public**, and confirm.
 
 Do this only after Step 2. Once public, anyone can see the code and history.
+
+After the repository is public, go to **Settings**, then **General**, scroll to **Social preview**, click **Edit**, then **Upload an image** and choose `assets/social-preview.png`. GitHub hides this option while the repository is private. It is the picture shown when someone shares the link.
 
 ## Step 4: Publish to npm (10 minutes)
 
