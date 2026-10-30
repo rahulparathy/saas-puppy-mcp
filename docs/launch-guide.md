@@ -37,7 +37,7 @@ Do this only after Step 2. Once public, anyone can see the code and history.
 ## Step 4: Publish to npm (10 minutes)
 
 1. Log in at https://www.npmjs.com, click your picture, then **Access Tokens**, then **Generate New Token**, then **Granular Access Token**.
-2. Name it `saas-puppy-mcp`. Under **Permissions**, choose **Read and write**. Choose **All packages** (the package does not exist yet). Set the longest expiry offered. Click **Generate** and copy the token.
+2. Name it `saas-puppy-mcp`. Under **Permissions**, choose **Read and write**. Choose **All packages** (the package does not exist yet). Switch on **Bypass two-factor authentication**, because the automatic publish cannot type a code. Set the longest expiry offered and note the date, since an expired token makes the next release fail and you will need to make a new one. Click **Generate** and copy the token straight away, because npm shows it only once.
 3. On GitHub, open the repository, **Settings**, **Secrets and variables**, **Actions**, **New repository secret**. Name: `NPM_TOKEN`. Value: the token. Click **Add secret**.
 4. Go to **Releases**, then **Draft a new release**. In **Choose a tag**, type `v0.1.0` and click **Create new tag**. Title it `v0.1.0`. Click **Publish release**.
 5. Open the **Actions** tab. A run called **Release** starts. Wait for a green tick (a few minutes). It publishes the package to npm and lists it in the official MCP Registry.
