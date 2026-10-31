@@ -2,7 +2,7 @@
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.rahulparathy/saas-puppy",
   "title": "SaaS Puppy",
-  "description": "Look up or compare free-tier developer tools in the SaaS Puppy directory, with the catch spelled out.",
+  "description": "Look up or compare free-tier developer tools, with the catch spelled out.",
   "websiteUrl": "https://saaspuppy.com",
   "repository": {
     "url": "https://github.com/rahulparathy/saas-puppy-mcp",

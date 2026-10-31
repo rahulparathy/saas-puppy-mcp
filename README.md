@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="assets/banner.png" alt="SaaS Puppy MCP: ask your AI about free-tier developer tools" width="100%">
+  <img src="https://raw.githubusercontent.com/rahulparathy/saas-puppy-mcp/main/assets/banner.png" alt="SaaS Puppy MCP: ask your AI about free-tier developer tools" width="100%">
 </p>
 
 <p align="center">
@@ -8,8 +8,6 @@
   <img alt="Node 20 or newer" src="https://img.shields.io/badge/node-%3E%3D20-339933.svg">
   <img alt="MCP server" src="https://img.shields.io/badge/MCP-server-black.svg">
 </p>
-
-> **Pre-release.** The `npx` commands below start working when the package is published to npm at launch. The hosted address (`https://saaspuppy.com/MCP`) works in any app that supports remote connections once the directory is live.
 
 # SaaS Puppy MCP
 
