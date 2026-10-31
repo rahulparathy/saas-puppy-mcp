@@ -1,0 +1,34 @@
+name: Publish to MCP Registry
+
+# Manual run. Use it when the package is already on npm and only the official
+# MCP Registry listing is missing or needs to be refreshed.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Wait until npm shows the package version
+        run: |
+          VERSION="$(node -p "require('./package.json').version")"
+          for i in $(seq 1 12); do
+            if npm view "saas-puppy-mcp@${VERSION}" version >/dev/null 2>&1; then
+              echo "npm has saas-puppy-mcp@${VERSION}"
+              exit 0
+            fi
+            echo "Waiting for npm (${i}/12)..."
+            sleep 10
+          done
+          echo "npm does not show saas-puppy-mcp@${VERSION} yet."
+          exit 1
+      - name: Publish to the MCP Registry
+        run: |
+          curl -fsSL "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_linux_amd64.tar.gz" | tar xz mcp-publisher
+          ./mcp-publisher login github-oidc
+          ./mcp-publisher publish
